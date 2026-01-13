@@ -8,10 +8,10 @@ const _playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif
 const _inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Contratos&Distratos | Formulação de Contratos Empresariais e Pessoais",
+  title: "Contratos e Distratos | Segurança Jurídica",
   description:
-    "Especialistas em elaboração de contratos para pessoas físicas e jurídicas. Serviços profissionais com integridade e experiência.",
-  generator: "v0.app",
+    "Soluções empresariais de conflitos de interesse, execução, recuperação judicial, contratos e acordos entre pessoas físicas e jurídicas",
+  generator: "Contratos e Distratos",
   icons: {
     icon: [
       {
