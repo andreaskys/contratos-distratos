@@ -150,20 +150,20 @@ export default function Home() {
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 mt-1 flex-shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 mt-1 shrink-0" />
                     <span>Assessoria completa em negociações imobiliárias</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 mt-1 flex-shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 mt-1 shrink-0" />
                     <span>Contratos de relacionamento e família</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 mt-1 flex-shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 mt-1 shrink-0" />
                     <span>Planejamento sucessório e testamentos</span>
                   </li>
                 </ul>
               </div>
-              <div className="relative h-[400px] rounded-lg overflow-hidden">
+              <div className="relative h-100 rounded-lg overflow-hidden">
                 <img
                   src="https://i.postimg.cc/8kF5GwBw/handshakeppp.jpg"
                   alt="Acordo entre pessoas físicas"
@@ -180,7 +180,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden">
+              <div className="order-2 md:order-1 relative h-100 rounded-lg overflow-hidden">
                 <img
                   src="https://i.postimg.cc/WpD3VS66/handshakeentp.jpg"
                   alt="Acordo empresarial"
@@ -198,15 +198,15 @@ export default function Home() {
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 mt-1 flex-shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 mt-1 shrink-0" />
                     <span>Constituição e reestruturação societária</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 mt-1 flex-shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 mt-1 shrink-0" />
                     <span>Contratos comerciais e parcerias estratégicas</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 mt-1 flex-shrink-0" />
+                    <CheckCircle2 className="h-5 w-5 mt-1 shrink-0" />
                     <span>Recuperação judicial e resolução de conflitos</span>
                   </li>
                 </ul>
@@ -379,7 +379,7 @@ export default function Home() {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-foreground text-background flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-foreground text-background flex items-center justify-center shrink-0">
                     <Mail className="h-5 w-5" strokeWidth={1.5} />
                   </div>
                   <div>
@@ -389,7 +389,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-foreground text-background flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-foreground text-background flex items-center justify-center shrink-0">
                     <Phone className="h-5 w-5" strokeWidth={1.5} />
                   </div>
                   <div>
@@ -399,7 +399,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-foreground text-background flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-foreground text-background flex items-center justify-center shrink-0">
                     <MapPin className="h-5 w-5" strokeWidth={1.5} />
                   </div>
                   <div>
