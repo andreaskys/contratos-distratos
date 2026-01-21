@@ -11,7 +11,6 @@ const emailSchema = z.object({
   message: z.string().min(10, 'Mensagem deve ter pelo menos 10 caracteres'),
 });
 
-export const dynamic = 'force-dynamic';
 
 export async function POST(request: NextRequest) {
   try {
