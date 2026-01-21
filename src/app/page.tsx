@@ -1,8 +1,27 @@
-import { Scale, FileText, Users, Mail, Phone, MapPin, Building2, CheckCircle2 } from "lucide-react"
+"use client"
+import { motion } from "framer-motion"
+import { Scale, FileText, Users, Mail, Phone, MapPin, Building2, CheckCircle2} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import ContactForm from "@/components/contact-form"
 
+
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+}
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+    transition: { duration: 0.5, ease: "easeOut" },
+}
 
 export default function Home() {
 
@@ -106,26 +125,26 @@ export default function Home() {
         </div>
       </section>
 
-       {/* About Section */}
+      {/* About Section */}
       <section id="sobre" className="py-20 border-b border-border">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Contratos e Distratos</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+              Contratos e Distratos
+            </h2>
             <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Um grupo de especialistas que lida com soluções empresariais de conflitos de interesse,
-                podendo ser esses de ordem de execução, recuperação judicial, contratos e acordos firmados entre pessoas
-                físicas e pessoas jurídicas.
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6 text-center">
+                Especialistas em soluções estratégicas para conflitos empresariais, nossa equipe domina a 
+                complexidade de processos de execução, recuperações judiciais e a estruturação de instrumentos 
+                contratuais entre entes físicos e jurídicos.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Nossa missão é proporcionar <strong className="text-foreground">Segurança Jurídica</strong> em todas as
-                suas transações, garantindo que seus direitos e obrigações estejam claramente definidos e protegidos por
-                lei.
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6 text-center">
+                Proporcionamos a blindagem necessária para que suas operações gozem de total Segurança Jurídica, 
+                traduzindo obrigações em clareza e direitos em proteção legal efetiva.
               </p>
-              <div className="p-8 rounded-lg mt-8">
-                <p className="text-lg font-medium text-foreground text-balance italic">
-                  "Vai vender, comprar, trocar ou alienar algum bem? Tenha em mente que um contrato deve ser realizado,
-                  pois a garantia e a solidez deste só se fará perante um bom contrato."
+              <div className="p-8 rounded-lg mt-8 flex justify-center">
+                <p className="text-lg font-medium text-foreground text-balance italic text-center max-w-2xl">
+                  Vai vender, comprar, trocar ou alienar algum bem? Tenha em mente que um contrato deve ser realizado, pois a garantia e a solidez deste só se fará perante um bom contrato.
                 </p>
               </div>
             </div>
@@ -133,10 +152,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pessoa Física Section */}
-      <section id="pessoa-fisica" className="py-20 border-b border-border ">
+            {/* Pessoa Física Section */}
+      <section id="pessoa-fisica" className="py-20 border-b border-border overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial={{ opacity: 0, x: -80 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: true, amount: 0.3 }} 
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="flex items-center gap-3 mb-4">
@@ -165,26 +190,32 @@ export default function Home() {
               </div>
               <div className="relative h-100 rounded-lg overflow-hidden">
                 <img
-                  src="https://i.postimg.cc/8kF5GwBw/handshakeppp.jpg"
+                  src="https://i.postimg.cc/mD1d0DLk/ddeal.jpg"
                   alt="Acordo entre pessoas físicas"
-                  className="object-cover w-full h-full grayscale"
+                  className="object-cover w-full h-full "
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Pessoa Jurídica Section */}
-      <section id="pessoa-juridica" className="py-20 border-b border-border">
+      <section id="pessoa-juridica" className="py-20 border-b border-border overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <motion.div 
+            className="max-w-6xl mx-auto"
+            initial={{ opacity: 0, x: 80 }} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="order-2 md:order-1 relative h-100 rounded-lg overflow-hidden">
                 <img
-                  src="https://i.postimg.cc/WpD3VS66/handshakeentp.jpg"
+                  src="https://i.postimg.cc/7PG8kHsm/deal.avif"
                   alt="Acordo empresarial"
-                  className="object-cover w-full h-full grayscale"
+                  className="object-cover w-full h-full"
                 />
               </div>
               <div className="order-1 md:order-2">
@@ -212,155 +243,124 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="servicos" className="border-b border-border bg-card">
-        <div className="container mx-auto px-4 py-20 md:py-28">
-          <div className="mb-16"></div>
-          <section id="contratos" className="py-20">
-            <div className="container mx-auto px-4">
-              <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-12">
-                  <div className="flex items-center justify-center gap-3 mb-4">
-                    <h2 className="text-3xl md:text-4xl font-bold">Áreas de Atuação</h2>
-                  </div>
-                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                    Oferecemos elaboração e revisão de contratos especializados para todas as suas necessidades
-                    jurídicas
-                  </p>
-                </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {/* Pessoa Física */}
-                  <Card className="transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-foreground/20 cursor-pointer">
-                    <CardHeader>
-                      <CardTitle className="flex items-center gap-2">
-                        <Users className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-                        Pessoa Física
-                      </CardTitle>
-                      <CardDescription>Contratos para indivíduos</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="space-y-2 text-sm">
-                        {contratosPessoaFisica.map((contrato, index) => (
-                          <li
-                            key={index}
-                            className="flex items-start gap-2 hover:text-foreground transition-colors duration-200"
-                          >
-                            <span className="text-muted-foreground mt-1">•</span>
-                            <span>{contrato}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-
-                  {/* Pessoa Jurídica */}
-                  <Card className="transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-foreground/20 cursor-pointer">
-                    <CardHeader>
-                      <CardTitle className="flex items-center gap-2">
-                        <Building2 className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-                        Pessoa Jurídica
-                      </CardTitle>
-                      <CardDescription>Contratos empresariais</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="space-y-2 text-sm">
-                        {contratosPessoaJuridica.map((contrato, index) => (
-                          <li
-                            key={index}
-                            className="flex items-start gap-2 hover:text-foreground transition-colors duration-200"
-                          >
-                            <span className="text-muted-foreground mt-1">•</span>
-                            <span>{contrato}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-
-                  {/* Trabalhistas */}
-                  <Card className="transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-foreground/20 cursor-pointer">
-                    <CardHeader>
-                      <CardTitle className="flex items-center gap-2">
-                        <FileText className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-                        Trabalhistas
-                      </CardTitle>
-                      <CardDescription>Relações de trabalho</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="space-y-2 text-sm">
-                        {contratosTrabalho.map((contrato, index) => (
-                          <li
-                            key={index}
-                            className="flex items-start gap-2 hover:text-foreground transition-colors duration-200"
-                          >
-                            <span className="text-muted-foreground mt-1">•</span>
-                            <span>{contrato}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-
-                  {/* Digitais e Especializados */}
-                  <Card className="transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-foreground/20 cursor-pointer">
-                    <CardHeader>
-                      <CardTitle className="flex items-center gap-2">
-                        <Scale className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
-                        Digitais & Outros
-                      </CardTitle>
-                      <CardDescription>Contratos especializados</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <ul className="space-y-2 text-sm">
-                        {contratosDigitais.map((contrato, index) => (
-                          <li
-                            key={index}
-                            className="flex items-start gap-2 hover:text-foreground transition-colors duration-200"
-                          >
-                            <span className="text-muted-foreground mt-1">•</span>
-                            <span>{contrato}</span>
-                          </li>
-                        ))}
-                        {contratosEspecializados.map((contrato, index) => (
-                          <li
-                            key={index}
-                            className="flex items-start gap-2 hover:text-foreground transition-colors duration-200"
-                          >
-                            <span className="text-muted-foreground mt-1">•</span>
-                            <span>{contrato}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <div className="mt-12 p-8 border-2 border-border bg-background transition-all duration-300 hover:border-foreground hover:shadow-xl">
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <div className="flex-1">
-                <h4 className="text-xl font-serif font-bold text-foreground mb-2">Atendimento personalizado</h4>
-                <p className="text-muted-foreground">
-                  Cada contrato é elaborado sob medida, considerando as particularidades e necessidades específicas de
-                  cada cliente.
-                </p>
-              </div>
-              <Button
-                variant="outline"
-                className="border-2 self-start md:self-center bg-transparent hover:bg-foreground hover:text-background transition-all duration-300"
-              >
-                <a href="#contato">Falar com Especialista</a>
-              </Button>
-            </div>
+     <section id="servicos" className="border-b border-border bg-card py-20 md:py-28">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Áreas de Atuação</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Oferecemos elaboração e revisão de contratos especializados para todas as suas necessidades jurídicas.
+            </p>
           </div>
+
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {/* Card 1: Pessoa Física */}
+            <motion.div variants={itemVariants}>
+              <Card className="h-full transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-foreground/20 cursor-pointer group">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Users className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                    Pessoa Física
+                  </CardTitle>
+                  <CardDescription>Contratos para indivíduos</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm">
+                    {contratosPessoaFisica.map((contrato, index) => (
+                      <li key={index} className="flex items-start gap-2 hover:text-foreground transition-colors duration-200">
+                        <span className="text-muted-foreground mt-1">•</span>
+                        <span>{contrato}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Card 2: Pessoa Jurídica */}
+            <motion.div variants={itemVariants}>
+              <Card className="h-full transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-foreground/20 cursor-pointer group">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Building2 className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                    Pessoa Jurídica
+                  </CardTitle>
+                  <CardDescription>Contratos empresariais</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm">
+                    {contratosPessoaJuridica.map((contrato, index) => (
+                      <li key={index} className="flex items-start gap-2 hover:text-foreground transition-colors duration-200">
+                        <span className="text-muted-foreground mt-1">•</span>
+                        <span>{contrato}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Card 3: Trabalhistas */}
+            <motion.div variants={itemVariants}>
+              <Card className="h-full transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-foreground/20 cursor-pointer group">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <FileText className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                    Trabalhistas
+                  </CardTitle>
+                  <CardDescription>Relações de trabalho</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm">
+                    {contratosTrabalho.map((contrato, index) => (
+                      <li key={index} className="flex items-start gap-2 hover:text-foreground transition-colors duration-200">
+                        <span className="text-muted-foreground mt-1">•</span>
+                        <span>{contrato}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Card 4: Digitais */}
+            <motion.div variants={itemVariants}>
+              <Card className="h-full transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-foreground/20 cursor-pointer group">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Scale className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                    Digitais & Outros
+                  </CardTitle>
+                  <CardDescription>Contratos especializados</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-sm">
+                    {contratosDigitais.map((contrato, index) => (
+                      <li key={index} className="flex items-start gap-2 hover:text-foreground transition-colors duration-200">
+                        <span className="text-muted-foreground mt-1">•</span>
+                        <span>{contrato}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+          </motion.div>
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Contact Section */}
       <section id="contato" className="bg-card">
