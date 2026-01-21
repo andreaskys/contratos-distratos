@@ -11,6 +11,8 @@ const emailSchema = z.object({
   message: z.string().min(10, 'Mensagem deve ter pelo menos 10 caracteres'),
 });
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -58,7 +60,7 @@ export async function POST(request: NextRequest) {
       const fieldErrors: Record<string, string[] | undefined> = error.flatten().fieldErrors;
       const firstErrorMessage = Object.values(fieldErrors)
         .find(msgs => msgs && msgs.length > 0)?.[0] || 'Erro de validação';
-    return NextResponse.json({ error: firstErrorMessage }, { status: 400 });
+        return NextResponse.json({ error: firstErrorMessage }, { status: 400 });
 }
 
     console.error('Erro ao enviar email:', error);
