@@ -384,7 +384,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground mb-1">Email</p>
-                    <p className="text-muted-foreground">contato@contratosdistratos.com.br</p>
+                    <p className="text-muted-foreground">contratosedistratos@yahoo.com.br</p>
                   </div>
                 </div>
 
@@ -394,21 +394,13 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground mb-1">Telefone</p>
-                    <p className="text-muted-foreground">(00) 0000-0000</p>
+                    <p className="text-muted-foreground">(62) 986369250</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-foreground text-background flex items-center justify-center shrink-0">
                     <MapPin className="h-5 w-5" strokeWidth={1.5} />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-foreground mb-1">Localização</p>
-                    <p className="text-muted-foreground">
-                      [Sua Cidade/Estado]
-                      <br />
-                      Atendimento presencial e online
-                    </p>
                   </div>
                 </div>
               </div>
@@ -434,7 +426,6 @@ export default function Home() {
 
             <div className="text-sm text-background/70 text-center md:text-right">
               <p>© {new Date().getFullYear()} Contratos&Distratos. Todos os direitos reservados.</p>
-              <p className="mt-1">OAB/[UF] [Número de Registro]</p>
             </div>
           </div>
         </div>
